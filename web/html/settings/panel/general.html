@@ -95,14 +95,14 @@
     <a-collapse-panel key="3" header='{{ i18n "pages.settings.certs" }}'>
         <a-setting-list-item paddings="small">
             <template #title>{{ i18n "pages.settings.publicKeyPath"}}</template>
-            <template #description>{{ i18n "pages.settings.publicKeyPathDesc"}}</template>
+            <template #description>{{ i18n "pages.settings.publicKeyPathDesc"}} <br/><span style="color: #1890ff;">ACME方式证书路径示例: /root/.acme.sh/example.com/fullchain.cer</span></template>
             <template #control>
                 <a-input type="text" v-model="allSetting.webCertFile"></a-input>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
             <template #title>{{ i18n "pages.settings.privateKeyPath"}}</template>
-            <template #description>{{ i18n "pages.settings.privateKeyPathDesc"}}</template>
+            <template #description>{{ i18n "pages.settings.privateKeyPathDesc"}} <br/><span style="color: #1890ff;">ACME方式证书路径示例: /root/.acme.sh/example.com/example.com.key</span></template>
             <template #control>
                 <a-input type="text" v-model="allSetting.webKeyFile"></a-input>
             </template>

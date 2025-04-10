@@ -696,17 +696,17 @@ class LanguageManager {
             icon: "🇮🇷",
         },
         {
-            name: "简体中文",
+            name: "简体中文 (Simplified Chinese)",
             value: "zh-CN",
             icon: "🇨🇳",
         },
         {
-            name: "繁體中文",
+            name: "繁體中文 (Traditional Chinese)",
             value: "zh-TW",
             icon: "🇹🇼",
         },
         {
-            name: "日本語",
+            name: "日本語 (Japanese)",
             value: "ja-JP",
             icon: "🇯🇵",
         },

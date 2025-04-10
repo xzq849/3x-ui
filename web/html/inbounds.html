@@ -151,21 +151,27 @@
               <a-col :sm="12" :md="6">
                 <a-custom-statistic title='{{ i18n "pages.inbounds.totalDownUp" }}' :value="`${SizeFormatter.sizeFormat(total.up)} / ${SizeFormatter.sizeFormat(total.down)}`">
                   <template #prefix>
-                    <a-icon type="swap"></a-icon>
+                    <a-tooltip :title="'{{ i18n "icons.swap" }}'">
+                      <a-icon type="swap"></a-icon>
+                    </a-tooltip>
                   </template>
                 </a-custom-statistic>
               </a-col>
               <a-col :sm="12" :md="6">
                 <a-custom-statistic title='{{ i18n "pages.inbounds.totalUsage" }}' :value="SizeFormatter.sizeFormat(total.up + total.down)" :style="{ marginTop: isMobile ? '10px' : 0 }">
                   <template #prefix>
-                    <a-icon type="pie-chart"></a-icon>
+                    <a-tooltip :title="'{{ i18n "icons.pie-chart" }}'">
+                      <a-icon type="pie-chart"></a-icon>
+                    </a-tooltip>
                   </template>
                 </a-custom-statistic>
               </a-col>
               <a-col :sm="12" :md="6">
                 <a-custom-statistic title='{{ i18n "pages.inbounds.inboundCount" }}' :value="dbInbounds.length" :style="{ marginTop: isMobile ? '10px' : 0 }">
                   <template #prefix>
-                    <a-icon type="bars"></a-icon>
+                    <a-tooltip :title="'{{ i18n "icons.bars" }}'">
+                      <a-icon type="bars"></a-icon>
+                    </a-tooltip>
                   </template>
                 </a-custom-statistic>
               </a-col>
@@ -173,7 +179,9 @@
                 <a-custom-statistic title='{{ i18n "clients" }}' value=" " :style="{ marginTop: isMobile ? '10px' : 0 }">
                   <template #prefix>
                     <a-space direction="horizontal">
-                      <a-icon type="team"></a-icon>
+                      <a-tooltip :title="'{{ i18n "icons.team" }}'">
+                        <a-icon type="team"></a-icon>
+                      </a-tooltip>
                       <div>
                         <a-back-top :target="() => document.getElementById('content-layout')" visibility-height="200"></a-back-top>
                         <a-tag color="green">[[ total.clients ]]</a-tag>
@@ -222,27 +230,39 @@
                   </a-button>
                   <a-menu slot="overlay" @click="a => generalActions(a)" :theme="themeSwitcher.currentTheme">
                     <a-menu-item key="import">
-                      <a-icon type="import"></a-icon>
+                      <a-tooltip :title="'{{ i18n "icons.import" }}'">
+                        <a-icon type="import"></a-icon>
+                      </a-tooltip>
                       {{ i18n "pages.inbounds.importInbound" }}
                     </a-menu-item>
                     <a-menu-item key="export">
-                      <a-icon type="export"></a-icon>
+                      <a-tooltip :title="'{{ i18n "icons.export" }}'">
+                        <a-icon type="export"></a-icon>
+                      </a-tooltip>
                       {{ i18n "pages.inbounds.export" }}
                     </a-menu-item>
                     <a-menu-item key="subs" v-if="subSettings.enable">
-                      <a-icon type="export"></a-icon>
+                      <a-tooltip :title="'{{ i18n "icons.export" }}'">
+                        <a-icon type="export"></a-icon>
+                      </a-tooltip>
                       {{ i18n "pages.inbounds.export" }} - {{ i18n "pages.settings.subSettings" }}
                     </a-menu-item>
                     <a-menu-item key="resetInbounds">
-                      <a-icon type="reload"></a-icon>
+                      <a-tooltip :title="'{{ i18n "icons.reload" }}'">
+                        <a-icon type="reload"></a-icon>
+                      </a-tooltip>
                       {{ i18n "pages.inbounds.resetAllTraffic" }}
                     </a-menu-item>
                     <a-menu-item key="resetClients">
-                      <a-icon type="file-done"></a-icon>
+                      <a-tooltip :title="'{{ i18n "icons.file-done" }}'">
+                        <a-icon type="file-done"></a-icon>
+                      </a-tooltip>
                       {{ i18n "pages.inbounds.resetAllClientTraffics" }}
                     </a-menu-item>
                     <a-menu-item key="delDepletedClients" :style="{ color: '#FF4D4F' }">
-                      <a-icon type="rest"></a-icon>
+                      <a-tooltip :title="'{{ i18n "icons.rest" }}'">
+                        <a-icon type="rest"></a-icon>
+                      </a-tooltip>
                       {{ i18n "pages.inbounds.delDepletedClients" }}
                     </a-menu-item>
                   </a-menu>
@@ -251,7 +271,7 @@
             </template>
             <template #extra>
               <a-button-group>
-                <a-button icon="sync" @click="manualRefresh" :loading="refreshing"></a-button>
+                <a-button icon="sync" @click="manualRefresh" :loading="refreshing" :title="'{{ i18n "icons.sync" }}'"></a-button>
                 <a-popover placement="bottomRight" trigger="click" :overlay-class-name="themeSwitcher.currentTheme"> 
                   <template #title>
                     <div class="ant-custom-popover-title">
@@ -271,7 +291,7 @@
                       </a-select>
                     </a-space>
                   </template>
-                  <a-button icon="down"></a-button>
+                  <a-button icon="down" :title="'{{ i18n "icons.down" }}'"></a-button>
                 </a-popover>
               </a-button-group>
             </template>
